@@ -1,10 +1,23 @@
 import './App.css';
+import { Routes, Route } from 'react-router';
+import HomePage from './components/HomePage';
+import DriftPage from './components/DriftPage';
+import TimeAttackPage from './components/TimeAttackPage';
+import ForzaPage from './components/ForzaPage';
+import Menu from './components/Menu';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
+    <div>
+      <Menu />
+      <div className='page'>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/drift' element={<DriftPage />} />
+          <Route path='/timeattack' element={<TimeAttackPage />} />
+          <Route path='/forza' element={<ForzaPage />} />
+        </Routes>
+      </div>
     </div>
   );
 }
-
-export default App;
